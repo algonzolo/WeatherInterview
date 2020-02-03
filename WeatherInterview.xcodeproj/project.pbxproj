@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,7 @@
 		AB5FD1F3241D12D6009EC199 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB5FD1F1241D12D6009EC199 /* Main.storyboard */; };
 		AB5FD1F5241D12DA009EC199 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB5FD1F4241D12DA009EC199 /* Assets.xcassets */; };
 		AB5FD1F8241D12DA009EC199 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB5FD1F6241D12DA009EC199 /* LaunchScreen.storyboard */; };
+		AB5FD204241D1FB0009EC199 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5FD203241D1FB0009EC199 /* R.generated.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		AB5FD1F4241D12DA009EC199 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AB5FD1F7241D12DA009EC199 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AB5FD1F9241D12DA009EC199 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AB5FD203241D1FB0009EC199 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,7 +58,6 @@
 				8772879833903CB0B0EBE348 /* Pods-WeatherInterview.debug.xcconfig */,
 				92ACCF5734769460435F0FFC /* Pods-WeatherInterview.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -85,11 +86,28 @@
 				AB5FD1ED241D12D6009EC199 /* SceneDelegate.swift */,
 				AB5FD1EF241D12D6009EC199 /* ViewController.swift */,
 				AB5FD1F1241D12D6009EC199 /* Main.storyboard */,
+				AB5FD201241D1D46009EC199 /* Assets */,
+			);
+			path = WeatherInterview;
+			sourceTree = "<group>";
+		};
+		AB5FD201241D1D46009EC199 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				AB5FD202241D1D5A009EC199 /* Generated */,
 				AB5FD1F4241D12DA009EC199 /* Assets.xcassets */,
 				AB5FD1F6241D12DA009EC199 /* LaunchScreen.storyboard */,
 				AB5FD1F9241D12DA009EC199 /* Info.plist */,
 			);
-			path = WeatherInterview;
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		AB5FD202241D1D5A009EC199 /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+				AB5FD203241D1FB0009EC199 /* R.generated.swift */,
+			);
+			path = Generated;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -100,7 +118,9 @@
 			buildConfigurationList = AB5FD1FC241D12DA009EC199 /* Build configuration list for PBXNativeTarget "WeatherInterview" */;
 			buildPhases = (
 				6D7E46A9D093293C64B435DD /* [CP] Check Pods Manifest.lock */,
+				AB5FD200241D1D25009EC199 /* R.swift */,
 				AB5FD1E4241D12D5009EC199 /* Sources */,
+				AB5FD1FF241D1CCA009EC199 /* SwiftLint */,
 				AB5FD1E5241D12D5009EC199 /* Frameworks */,
 				AB5FD1E6241D12D5009EC199 /* Resources */,
 				F72BA31E46DD5C1DF308DF06 /* [CP] Embed Pods Frameworks */,
@@ -183,6 +203,44 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		AB5FD1FF241D1CCA009EC199 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+		};
+		AB5FD200241D1D25009EC199 /* R.swift */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$TEMP_DIR/rswift-lastrun",
+			);
+			name = R.swift;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				$SRCROOT/WeatherInterview/Assets/Generated/R.generated.swift,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/WeatherInterview/Assets/Generated/R.generated.swift\"\n\n";
+		};
 		F72BA31E46DD5C1DF308DF06 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -210,6 +268,7 @@
 				AB5FD1F0241D12D6009EC199 /* ViewController.swift in Sources */,
 				AB5FD1EC241D12D6009EC199 /* AppDelegate.swift in Sources */,
 				AB5FD1EE241D12D6009EC199 /* SceneDelegate.swift in Sources */,
+				AB5FD204241D1FB0009EC199 /* R.generated.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -356,7 +415,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z9KPGC6299;
-				INFOPLIST_FILE = WeatherInterview/Info.plist;
+				INFOPLIST_FILE = WeatherInterview/Assets/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -375,7 +434,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z9KPGC6299;
-				INFOPLIST_FILE = WeatherInterview/Info.plist;
+				INFOPLIST_FILE = WeatherInterview/Assets/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
