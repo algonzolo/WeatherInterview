@@ -23,6 +23,11 @@
 		AB5FD24A241D37EF009EC199 /* ViewWithCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5FD246241D37EF009EC199 /* ViewWithCircle.swift */; };
 		AB5FD24B241D37EF009EC199 /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5FD247241D37EF009EC199 /* FeedCell.swift */; };
 		AB5FD24C241D37EF009EC199 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB5FD248241D37EF009EC199 /* Main.storyboard */; };
+		AB5FD24E241D3D58009EC199 /* ForecastService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5FD24D241D3D58009EC199 /* ForecastService.swift */; };
+		AB5FD250241D3E00009EC199 /* Forecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5FD24F241D3E00009EC199 /* Forecast.swift */; };
+		AB5FD252241D3E4B009EC199 /* ForecastPayload.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5FD251241D3E4B009EC199 /* ForecastPayload.swift */; };
+		AB5FD254241D3E9E009EC199 /* ForecastProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5FD253241D3E9E009EC199 /* ForecastProvider.swift */; };
+		AB5FD256241D3F00009EC199 /* GPSCoordinates.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5FD255241D3F00009EC199 /* GPSCoordinates.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +51,11 @@
 		AB5FD246241D37EF009EC199 /* ViewWithCircle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewWithCircle.swift; sourceTree = "<group>"; };
 		AB5FD247241D37EF009EC199 /* FeedCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
 		AB5FD248241D37EF009EC199 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		AB5FD24D241D3D58009EC199 /* ForecastService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastService.swift; sourceTree = "<group>"; };
+		AB5FD24F241D3E00009EC199 /* Forecast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forecast.swift; sourceTree = "<group>"; };
+		AB5FD251241D3E4B009EC199 /* ForecastPayload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastPayload.swift; sourceTree = "<group>"; };
+		AB5FD253241D3E9E009EC199 /* ForecastProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastProvider.swift; sourceTree = "<group>"; };
+		AB5FD255241D3F00009EC199 /* GPSCoordinates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPSCoordinates.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,7 +168,12 @@
 			isa = PBXGroup;
 			children = (
 				AB5FD23B241D37BB009EC199 /* Cancelable.swift */,
+				AB5FD24D241D3D58009EC199 /* ForecastService.swift */,
 				AB5FD23C241D37BB009EC199 /* BackendError.swift */,
+				AB5FD24F241D3E00009EC199 /* Forecast.swift */,
+				AB5FD251241D3E4B009EC199 /* ForecastPayload.swift */,
+				AB5FD253241D3E9E009EC199 /* ForecastProvider.swift */,
+				AB5FD255241D3F00009EC199 /* GPSCoordinates.swift */,
 			);
 			path = ForecastProvider;
 			sourceTree = "<group>";
@@ -345,8 +360,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB5FD256241D3F00009EC199 /* GPSCoordinates.swift in Sources */,
 				AB5FD234241D379C009EC199 /* WeatherInterview.xcdatamodeld in Sources */,
+				AB5FD252241D3E4B009EC199 /* ForecastPayload.swift in Sources */,
 				AB5FD23F241D37BB009EC199 /* Alamofire.swift in Sources */,
+				AB5FD254241D3E9E009EC199 /* ForecastProvider.swift in Sources */,
+				AB5FD250241D3E00009EC199 /* Forecast.swift in Sources */,
 				AB5FD1EC241D12D6009EC199 /* AppDelegate.swift in Sources */,
 				AB5FD23D241D37BB009EC199 /* NSObject.swift in Sources */,
 				AB5FD1EE241D12D6009EC199 /* SceneDelegate.swift in Sources */,
@@ -354,6 +373,7 @@
 				AB5FD204241D1FB0009EC199 /* R.generated.swift in Sources */,
 				AB5FD241241D37BB009EC199 /* BackendError.swift in Sources */,
 				AB5FD24A241D37EF009EC199 /* ViewWithCircle.swift in Sources */,
+				AB5FD24E241D3D58009EC199 /* ForecastService.swift in Sources */,
 				AB5FD240241D37BB009EC199 /* Cancelable.swift in Sources */,
 				AB5FD23E241D37BB009EC199 /* UITableView.swift in Sources */,
 				AB5FD249241D37EF009EC199 /* MainViewController.swift in Sources */,
