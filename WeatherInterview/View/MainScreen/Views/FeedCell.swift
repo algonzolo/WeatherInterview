@@ -13,7 +13,7 @@ class FeedCell: UITableViewCell {
     @IBOutlet weak var timezone: UILabel!
     @IBOutlet weak var coords: UILabel!
     @IBOutlet weak var summary: UILabel!
-    @IBOutlet weak var forecast: UILabel!
+    @IBOutlet weak var weather: UILabel!
     @IBOutlet weak var temperature: UILabel!
     @IBOutlet weak var windSpeed: UILabel!
     @IBOutlet weak var humidity: UILabel!
@@ -28,14 +28,27 @@ class FeedCell: UITableViewCell {
         clear()
     }
     
-    func updateUI() {
+    func updateUI(with forecast: Forecast) {
+        timezone.text = "\(forecast.timezone)"
+        coords.text = "\(forecast.latitude) \(forecast.longitude)"
+        summary.text = "\(forecast.summary)"
+        weather.text = "\(forecast.forecast)"
+        temperature.text = "\(forecast.temperature)"
+        windSpeed.text = "\(forecast.windSpeed)"
+        humidity.text = "\(forecast.humidity)"
+    }
 
     }
-}
 
 // MARK: - Helpers
 private extension FeedCell {
     func clear() {
-
+        timezone.text = ""
+        coords.text = ""
+        summary.text = ""
+        weather.text = ""
+        temperature.text = ""
+        windSpeed.text = ""
+        humidity.text = ""
     }
 }

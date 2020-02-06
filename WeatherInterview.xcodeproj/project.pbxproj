@@ -35,6 +35,10 @@
 		AB5FD265241FA6EE009EC199 /* Rain.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5FD25D241FA6EE009EC199 /* Rain.swift */; };
 		AB5FD266241FA6EE009EC199 /* Sy.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5FD25E241FA6EE009EC199 /* Sy.swift */; };
 		AB5FD267241FA6EE009EC199 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5FD25F241FA6EE009EC199 /* Weather.swift */; };
+		AB5FD26A241FB4F0009EC199 /* AddLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5FD269241FB4F0009EC199 /* AddLocationViewController.swift */; };
+		AB5FD26D241FB5D1009EC199 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5FD26C241FB5D1009EC199 /* DataStore.swift */; };
+		AB5FD26F241FB611009EC199 /* PersistenceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5FD26E241FB611009EC199 /* PersistenceProvider.swift */; };
+		AB5FD272241FB977009EC199 /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5FD271241FB977009EC199 /* Feed.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +74,10 @@
 		AB5FD25D241FA6EE009EC199 /* Rain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rain.swift; sourceTree = "<group>"; };
 		AB5FD25E241FA6EE009EC199 /* Sy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sy.swift; sourceTree = "<group>"; };
 		AB5FD25F241FA6EE009EC199 /* Weather.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
+		AB5FD269241FB4F0009EC199 /* AddLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLocationViewController.swift; sourceTree = "<group>"; };
+		AB5FD26C241FB5D1009EC199 /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
+		AB5FD26E241FB611009EC199 /* PersistenceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceProvider.swift; sourceTree = "<group>"; };
+		AB5FD271241FB977009EC199 /* Feed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feed.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +170,8 @@
 		AB5FD235241D37BB009EC199 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				AB5FD270241FB951009EC199 /* MainScreen */,
+				AB5FD26B241FB577009EC199 /* PersistenceProvider */,
 				AB5FD236241D37BB009EC199 /* Extensions */,
 				AB5FD23A241D37BB009EC199 /* ForecastProvider */,
 			);
@@ -195,6 +205,7 @@
 		AB5FD242241D37EF009EC199 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				AB5FD268241FB4AA009EC199 /* LocationScreen */,
 				AB5FD243241D37EF009EC199 /* MainScreen */,
 				AB5FD248241D37EF009EC199 /* Main.storyboard */,
 			);
@@ -232,6 +243,31 @@
 				AB5FD25A241FA6EE009EC199 /* Wind.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		AB5FD268241FB4AA009EC199 /* LocationScreen */ = {
+			isa = PBXGroup;
+			children = (
+				AB5FD269241FB4F0009EC199 /* AddLocationViewController.swift */,
+			);
+			path = LocationScreen;
+			sourceTree = "<group>";
+		};
+		AB5FD26B241FB577009EC199 /* PersistenceProvider */ = {
+			isa = PBXGroup;
+			children = (
+				AB5FD26C241FB5D1009EC199 /* DataStore.swift */,
+				AB5FD26E241FB611009EC199 /* PersistenceProvider.swift */,
+			);
+			path = PersistenceProvider;
+			sourceTree = "<group>";
+		};
+		AB5FD270241FB951009EC199 /* MainScreen */ = {
+			isa = PBXGroup;
+			children = (
+				AB5FD271241FB977009EC199 /* Feed.swift */,
+			);
+			path = MainScreen;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -391,8 +427,10 @@
 			files = (
 				AB5FD263241FA6EE009EC199 /* Coord.swift in Sources */,
 				AB5FD256241D3F00009EC199 /* GPSCoordinates.swift in Sources */,
+				AB5FD26A241FB4F0009EC199 /* AddLocationViewController.swift in Sources */,
 				AB5FD264241FA6EE009EC199 /* Main.swift in Sources */,
 				AB5FD234241D379C009EC199 /* WeatherInterview.xcdatamodeld in Sources */,
+				AB5FD26F241FB611009EC199 /* PersistenceProvider.swift in Sources */,
 				AB5FD252241D3E4B009EC199 /* ForecastPayload.swift in Sources */,
 				AB5FD23F241D37BB009EC199 /* Alamofire.swift in Sources */,
 				AB5FD254241D3E9E009EC199 /* ForecastProvider.swift in Sources */,
@@ -401,8 +439,10 @@
 				AB5FD23D241D37BB009EC199 /* NSObject.swift in Sources */,
 				AB5FD1EE241D12D6009EC199 /* SceneDelegate.swift in Sources */,
 				AB5FD24B241D37EF009EC199 /* FeedCell.swift in Sources */,
+				AB5FD26D241FB5D1009EC199 /* DataStore.swift in Sources */,
 				AB5FD262241FA6EE009EC199 /* Wind.swift in Sources */,
 				AB5FD267241FA6EE009EC199 /* Weather.swift in Sources */,
+				AB5FD272241FB977009EC199 /* Feed.swift in Sources */,
 				AB5FD261241FA6EE009EC199 /* Cloud.swift in Sources */,
 				AB5FD204241D1FB0009EC199 /* R.generated.swift in Sources */,
 				AB5FD241241D37BB009EC199 /* BackendError.swift in Sources */,

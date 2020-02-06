@@ -12,10 +12,15 @@ class MainViewController: UIViewController {
     // MARK: IBOutlets
     @IBOutlet weak var feedTableView: UITableView!
     
+    // MARK: Model
+    private var model: Feed!
+    private var store: PersistenceProvider!
+    
     // MARK: View Controller Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        configureModel()
         configureTableView()
     }
     
@@ -26,11 +31,32 @@ class MainViewController: UIViewController {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+        model.invalidateCache()
     }
 }
 
 // MARK: - Helpers
 private extension MainViewController {
+    func configureModel() {
+        let forecastProvider = getForecastProvider()
+        store = getPersistenceProvider()
+        model = Feed(datastore: store, forecastProvider: forecastProvider)
+    }
+    
+    func getPersistenceProvider() -> PersistenceProvider {
+        let context = UIApplication.appDelegate.managedContext
+        return DataStore(context: context)
+    }
+    
+    func getForecastProvider() -> ForecastProvider {
+        guard
+            let key = Bundle.main.object(forInfoDictionaryKey: "WEATHER_API_KEY") as? String,
+            let host = Bundle.main.object(forInfoDictionaryKey: "WEATHER_API_HOST") as? String else {
+                fatalError("Project misconfiguration")
+        }
+        
+        return ForecastService(host: host, apiKey: key)
+    }
     
     func configureTableView() {
         feedTableView.dataSource = self
@@ -41,11 +67,22 @@ private extension MainViewController {
 extension MainViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        1
+        model.totalLocations()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeCell() as FeedCell
+        
+        cell.request = model.forecastForLocation(at: indexPath.row) { result in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let forecast):
+                    cell.updateUI(with: forecast)
+                default:
+                    break
+                }
+            }
+        }
         return cell
     }
     
@@ -53,7 +90,9 @@ extension MainViewController: UITableViewDataSource {
                    commit editingStyle: UITableViewCell.EditingStyle,
                    forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
+            model.deleteLocation(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
 }
+

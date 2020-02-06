@@ -24,6 +24,9 @@
                                 <state key="normal" title="ADD NEW LOCATION">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <segue destination="lxl-wB-8ow" kind="show" id="gGN-Vi-uRm"/>
+                                </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2AN-8a-Yxb">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="718"/>
@@ -182,11 +185,11 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="coords" destination="xAW-xb-PuM" id="xaJ-bZ-KyB"/>
-                                            <outlet property="forecast" destination="ty4-6T-Lg2" id="8ow-Vd-Kfd"/>
                                             <outlet property="humidity" destination="T1p-n4-DOg" id="2u1-3C-X5E"/>
                                             <outlet property="summary" destination="ARq-yW-ZrL" id="HcX-hu-NKl"/>
                                             <outlet property="temperature" destination="iVk-fi-Me3" id="t6f-2x-T10"/>
                                             <outlet property="timezone" destination="RU6-n9-aDx" id="uVz-8u-m6h"/>
+                                            <outlet property="weather" destination="ty4-6T-Lg2" id="8ow-Vd-Kfd"/>
                                             <outlet property="windSpeed" destination="N3z-AI-EiO" id="E2F-z5-axi"/>
                                         </connections>
                                     </tableViewCell>
@@ -239,9 +242,64 @@
             </objects>
             <point key="canvasLocation" x="208.69565217391306" y="133.92857142857142"/>
         </scene>
+        <!--WeatherApp-->
+        <scene sceneID="OJS-Xg-b8A">
+            <objects>
+                <viewController id="lxl-wB-8ow" userLabel="WeatherApp" customClass="AddLocationViewController" customModule="WeatherInterview" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NC5-mN-lMj">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Aol-oX-gPy">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="774"/>
+                            </mapView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Pin" translatesAutoresizingMaskIntoConstraints="NO" id="aZc-ZK-ZJo">
+                                <rect key="frame" x="192" y="372" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="1oE-ml-2eP"/>
+                                    <constraint firstAttribute="width" secondItem="aZc-ZK-ZJo" secondAttribute="height" multiplier="1:1" id="K2e-Dg-D0D"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VwP-wP-Byn">
+                                <rect key="frame" x="0.0" y="718" width="414" height="56"/>
+                                <color key="backgroundColor" red="0.086274509799999996" green="0.70980392160000005" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                                <inset key="contentEdgeInsets" minX="0.0" minY="16" maxX="0.0" maxY="16"/>
+                                <state key="normal" title="CONFIRM LOCATION">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="confirm:" destination="lxl-wB-8ow" eventType="touchUpInside" id="TSy-dx-eJg"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.086274509799999996" green="0.70980392160000005" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="Aol-oX-gPy" firstAttribute="leading" secondItem="4Oi-71-Qkb" secondAttribute="leading" id="7rb-Tx-Ejw"/>
+                            <constraint firstItem="VwP-wP-Byn" firstAttribute="leading" secondItem="4Oi-71-Qkb" secondAttribute="leading" id="FZW-TF-zAP"/>
+                            <constraint firstItem="aZc-ZK-ZJo" firstAttribute="centerX" secondItem="4Oi-71-Qkb" secondAttribute="centerX" id="RGe-0r-NxH"/>
+                            <constraint firstItem="4Oi-71-Qkb" firstAttribute="trailing" secondItem="VwP-wP-Byn" secondAttribute="trailing" id="bgo-AN-HNV"/>
+                            <constraint firstItem="aZc-ZK-ZJo" firstAttribute="centerY" secondItem="4Oi-71-Qkb" secondAttribute="centerY" id="fXq-yv-2dx"/>
+                            <constraint firstItem="4Oi-71-Qkb" firstAttribute="trailing" secondItem="Aol-oX-gPy" secondAttribute="trailing" id="hcG-fL-EEb"/>
+                            <constraint firstItem="4Oi-71-Qkb" firstAttribute="bottom" secondItem="VwP-wP-Byn" secondAttribute="bottom" id="hyS-nJ-BvZ"/>
+                            <constraint firstItem="4Oi-71-Qkb" firstAttribute="top" secondItem="Aol-oX-gPy" secondAttribute="top" id="y9x-it-xoM"/>
+                            <constraint firstItem="Aol-oX-gPy" firstAttribute="bottom" secondItem="4Oi-71-Qkb" secondAttribute="bottom" id="zyP-zV-1BQ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="4Oi-71-Qkb"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="WeatherApp" id="bgd-Xp-CZx"/>
+                    <connections>
+                        <outlet property="mapView" destination="Aol-oX-gPy" id="GLd-de-oaV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2hw-aW-jl8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2014" y="134"/>
+        </scene>
     </scenes>
     <resources>
         <image name="HumidityIcon" width="64" height="64"/>
+        <image name="Pin" width="28" height="39.5"/>
         <image name="WindSpeedIcon" width="64" height="64"/>
     </resources>
 </document>
