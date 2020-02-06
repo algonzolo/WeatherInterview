@@ -28,6 +28,13 @@
 		AB5FD252241D3E4B009EC199 /* ForecastPayload.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5FD251241D3E4B009EC199 /* ForecastPayload.swift */; };
 		AB5FD254241D3E9E009EC199 /* ForecastProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5FD253241D3E9E009EC199 /* ForecastProvider.swift */; };
 		AB5FD256241D3F00009EC199 /* GPSCoordinates.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5FD255241D3F00009EC199 /* GPSCoordinates.swift */; };
+		AB5FD261241FA6EE009EC199 /* Cloud.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5FD259241FA6EE009EC199 /* Cloud.swift */; };
+		AB5FD262241FA6EE009EC199 /* Wind.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5FD25A241FA6EE009EC199 /* Wind.swift */; };
+		AB5FD263241FA6EE009EC199 /* Coord.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5FD25B241FA6EE009EC199 /* Coord.swift */; };
+		AB5FD264241FA6EE009EC199 /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5FD25C241FA6EE009EC199 /* Main.swift */; };
+		AB5FD265241FA6EE009EC199 /* Rain.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5FD25D241FA6EE009EC199 /* Rain.swift */; };
+		AB5FD266241FA6EE009EC199 /* Sy.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5FD25E241FA6EE009EC199 /* Sy.swift */; };
+		AB5FD267241FA6EE009EC199 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5FD25F241FA6EE009EC199 /* Weather.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +63,13 @@
 		AB5FD251241D3E4B009EC199 /* ForecastPayload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastPayload.swift; sourceTree = "<group>"; };
 		AB5FD253241D3E9E009EC199 /* ForecastProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastProvider.swift; sourceTree = "<group>"; };
 		AB5FD255241D3F00009EC199 /* GPSCoordinates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPSCoordinates.swift; sourceTree = "<group>"; };
+		AB5FD259241FA6EE009EC199 /* Cloud.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cloud.swift; sourceTree = "<group>"; };
+		AB5FD25A241FA6EE009EC199 /* Wind.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Wind.swift; sourceTree = "<group>"; };
+		AB5FD25B241FA6EE009EC199 /* Coord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coord.swift; sourceTree = "<group>"; };
+		AB5FD25C241FA6EE009EC199 /* Main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Main.swift; sourceTree = "<group>"; };
+		AB5FD25D241FA6EE009EC199 /* Rain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rain.swift; sourceTree = "<group>"; };
+		AB5FD25E241FA6EE009EC199 /* Sy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sy.swift; sourceTree = "<group>"; };
+		AB5FD25F241FA6EE009EC199 /* Weather.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,11 +181,11 @@
 		AB5FD23A241D37BB009EC199 /* ForecastProvider */ = {
 			isa = PBXGroup;
 			children = (
+				AB5FD257241FA6C7009EC199 /* Models */,
 				AB5FD23B241D37BB009EC199 /* Cancelable.swift */,
 				AB5FD24D241D3D58009EC199 /* ForecastService.swift */,
 				AB5FD23C241D37BB009EC199 /* BackendError.swift */,
 				AB5FD24F241D3E00009EC199 /* Forecast.swift */,
-				AB5FD251241D3E4B009EC199 /* ForecastPayload.swift */,
 				AB5FD253241D3E9E009EC199 /* ForecastProvider.swift */,
 				AB5FD255241D3F00009EC199 /* GPSCoordinates.swift */,
 			);
@@ -203,6 +217,21 @@
 				AB5FD247241D37EF009EC199 /* FeedCell.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		AB5FD257241FA6C7009EC199 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				AB5FD251241D3E4B009EC199 /* ForecastPayload.swift */,
+				AB5FD259241FA6EE009EC199 /* Cloud.swift */,
+				AB5FD25B241FA6EE009EC199 /* Coord.swift */,
+				AB5FD25C241FA6EE009EC199 /* Main.swift */,
+				AB5FD25D241FA6EE009EC199 /* Rain.swift */,
+				AB5FD25E241FA6EE009EC199 /* Sy.swift */,
+				AB5FD25F241FA6EE009EC199 /* Weather.swift */,
+				AB5FD25A241FA6EE009EC199 /* Wind.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -360,7 +389,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB5FD263241FA6EE009EC199 /* Coord.swift in Sources */,
 				AB5FD256241D3F00009EC199 /* GPSCoordinates.swift in Sources */,
+				AB5FD264241FA6EE009EC199 /* Main.swift in Sources */,
 				AB5FD234241D379C009EC199 /* WeatherInterview.xcdatamodeld in Sources */,
 				AB5FD252241D3E4B009EC199 /* ForecastPayload.swift in Sources */,
 				AB5FD23F241D37BB009EC199 /* Alamofire.swift in Sources */,
@@ -370,13 +401,18 @@
 				AB5FD23D241D37BB009EC199 /* NSObject.swift in Sources */,
 				AB5FD1EE241D12D6009EC199 /* SceneDelegate.swift in Sources */,
 				AB5FD24B241D37EF009EC199 /* FeedCell.swift in Sources */,
+				AB5FD262241FA6EE009EC199 /* Wind.swift in Sources */,
+				AB5FD267241FA6EE009EC199 /* Weather.swift in Sources */,
+				AB5FD261241FA6EE009EC199 /* Cloud.swift in Sources */,
 				AB5FD204241D1FB0009EC199 /* R.generated.swift in Sources */,
 				AB5FD241241D37BB009EC199 /* BackendError.swift in Sources */,
 				AB5FD24A241D37EF009EC199 /* ViewWithCircle.swift in Sources */,
 				AB5FD24E241D3D58009EC199 /* ForecastService.swift in Sources */,
 				AB5FD240241D37BB009EC199 /* Cancelable.swift in Sources */,
 				AB5FD23E241D37BB009EC199 /* UITableView.swift in Sources */,
+				AB5FD265241FA6EE009EC199 /* Rain.swift in Sources */,
 				AB5FD249241D37EF009EC199 /* MainViewController.swift in Sources */,
+				AB5FD266241FA6EE009EC199 /* Sy.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -21,13 +21,13 @@ struct Forecast: Equatable {
 
 extension Forecast {
     init(payload: ForecastPayload) {
-        timezone = payload.timezone
-        latitude = payload.latitude
-        longitude = payload.longitude
-        summary = payload.currently.summary
-        forecast = payload.hourly.summary
-        windSpeed = payload.currently.windSpeed
-        humidity = payload.currently.humidity
-        temperature = payload.currently.temperature
+        timezone = String("\(payload.timezone)")
+        latitude = payload.coord?.lat ?? 0.0
+        longitude = payload.coord?.lon ?? 0.0
+        summary = payload.weather?.first?.descriptionField?.capitalized ?? ""
+        forecast = payload.sys?.country ?? ""
+        windSpeed = payload.wind?.speed ?? 0.0
+        humidity = Double(payload.main?.humidity ?? 0)
+        temperature = payload.main?.temp ?? 0.0
     }
 }

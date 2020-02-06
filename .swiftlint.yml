@@ -19,3 +19,4 @@ disabled_rules:
 excluded:
   - Pods
   - WeatherInterview/Assets/Generated/R.generated.swift
+  - WeatherInterview/Model/ForecastProvider/Models/
