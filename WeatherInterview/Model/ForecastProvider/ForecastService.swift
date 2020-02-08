@@ -9,7 +9,7 @@
 import Alamofire
 
 class ForecastService {
-    private var endpoint: URL
+    private var endpoint: String
     
     private enum Constants {
         static let baseURL = "https://api.openweathermap.org/data/2.5/weather?"
@@ -18,21 +18,17 @@ class ForecastService {
         
     }
     
-    init(host: String, apiKey: String) {
-        guard let url = URL(string: "\(Constants.baseURL)\(Constants.appID)\(Constants.units)") else {
-            fatalError("Project misconfiguration")
-        }
-        self.endpoint = url
+    init() {
+        self.endpoint = "\(Constants.baseURL)\(Constants.appID)\(Constants.units)"
     }
 }
 
 // MARK: - ForecastProviding
 extension ForecastService: ForecastProvider {
     func forecast(at location: GPSLocation, handler: @escaping ForecastHandler) -> Cancelable {
-        guard let url = URL(string: "&lat=\(location.latitude)&lon=\(location.longitude)", relativeTo: endpoint) else {
+        guard let url = URL(string: endpoint + "&lat=\(location.latitude)&lon=\(location.longitude)") else {
             fatalError("Internal inconsistency")
         }
-        
         return Alamofire.request(url)
             .responseData { response in
                 let decoder = JSONDecoder()

@@ -49,16 +49,11 @@ private extension MainViewController {
     }
     
     func getForecastProvider() -> ForecastProvider {
-        guard
-            let key = Bundle.main.object(forInfoDictionaryKey: "WEATHER_API_KEY") as? String,
-            let host = Bundle.main.object(forInfoDictionaryKey: "WEATHER_API_HOST") as? String else {
-                fatalError("Project misconfiguration")
-        }
-        
-        return ForecastService(host: host, apiKey: key)
+        ForecastService()
     }
     
     func configureTableView() {
+        feedTableView.tableFooterView = UIView()
         feedTableView.dataSource = self
     }
 }

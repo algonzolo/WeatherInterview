@@ -10,10 +10,10 @@ import UIKit
 
 class FeedCell: UITableViewCell {
     // MARK: IBOutlets
-    @IBOutlet weak var timezone: UILabel!
+    @IBOutlet weak var title: UILabel!
     @IBOutlet weak var coords: UILabel!
     @IBOutlet weak var summary: UILabel!
-    @IBOutlet weak var weather: UILabel!
+    @IBOutlet weak var country: UILabel!
     @IBOutlet weak var temperature: UILabel!
     @IBOutlet weak var windSpeed: UILabel!
     @IBOutlet weak var humidity: UILabel!
@@ -29,13 +29,13 @@ class FeedCell: UITableViewCell {
     }
     
     func updateUI(with forecast: Forecast) {
-        timezone.text = "\(forecast.timezone)"
-        coords.text = "\(forecast.latitude) \(forecast.longitude)"
+        title.text = forecast.name
+        coords.text = "\(forecast.latitude), \(forecast.longitude)"
         summary.text = "\(forecast.summary)"
-        weather.text = "\(forecast.forecast)"
-        temperature.text = "\(forecast.temperature)"
-        windSpeed.text = "\(forecast.windSpeed)"
-        humidity.text = "\(forecast.humidity)"
+        country.text = "\(forecast.country)".flagEmoji
+        temperature.text = String(format: "%.1f", forecast.temperature) + "°C"
+        windSpeed.text = "\(forecast.windSpeed)" + " m/s"
+        humidity.text = "\(Int(forecast.humidity))" + " %"
     }
 
     }
@@ -43,10 +43,10 @@ class FeedCell: UITableViewCell {
 // MARK: - Helpers
 private extension FeedCell {
     func clear() {
-        timezone.text = ""
+        title.text = ""
         coords.text = ""
         summary.text = ""
-        weather.text = ""
+        country.text = ""
         temperature.text = ""
         windSpeed.text = ""
         humidity.text = ""

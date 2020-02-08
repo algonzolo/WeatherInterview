@@ -28,7 +28,7 @@
                                     <segue destination="lxl-wB-8ow" kind="show" id="gGN-Vi-uRm"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2AN-8a-Yxb">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2AN-8a-Yxb">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="718"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
@@ -127,8 +127,8 @@
                                                                         </label>
                                                                     </subviews>
                                                                 </stackView>
-                                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="... KM/H" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="N3z-AI-EiO">
-                                                                    <rect key="frame" x="312.5" y="22" width="61.5" height="20.5"/>
+                                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="..." textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="N3z-AI-EiO">
+                                                                    <rect key="frame" x="360" y="22" width="14" height="20.5"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
@@ -185,11 +185,11 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="coords" destination="xAW-xb-PuM" id="xaJ-bZ-KyB"/>
+                                            <outlet property="country" destination="ty4-6T-Lg2" id="8ow-Vd-Kfd"/>
                                             <outlet property="humidity" destination="T1p-n4-DOg" id="2u1-3C-X5E"/>
                                             <outlet property="summary" destination="ARq-yW-ZrL" id="HcX-hu-NKl"/>
                                             <outlet property="temperature" destination="iVk-fi-Me3" id="t6f-2x-T10"/>
-                                            <outlet property="timezone" destination="RU6-n9-aDx" id="uVz-8u-m6h"/>
-                                            <outlet property="weather" destination="ty4-6T-Lg2" id="8ow-Vd-Kfd"/>
+                                            <outlet property="title" destination="RU6-n9-aDx" id="uVz-8u-m6h"/>
                                             <outlet property="windSpeed" destination="N3z-AI-EiO" id="E2F-z5-axi"/>
                                         </connections>
                                     </tableViewCell>

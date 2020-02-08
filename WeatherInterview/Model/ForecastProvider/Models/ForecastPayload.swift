@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct ForecastPayload: Decodable {
+struct ForecastPayload: Codable {
     let base : String?
     let clouds : Cloud?
     let cod : Int?
@@ -44,18 +44,18 @@ struct ForecastPayload: Decodable {
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         base = try values.decodeIfPresent(String.self, forKey: .base)
-        clouds = try Cloud(from: decoder)
+        clouds = try values.decodeIfPresent(Cloud.self, forKey: .clouds)
         cod = try values.decodeIfPresent(Int.self, forKey: .cod)
-        coord = try Coord(from: decoder)
+        coord = try values.decodeIfPresent(Coord.self, forKey: .coord)
         dt = try values.decodeIfPresent(Int.self, forKey: .dt)
         id = try values.decodeIfPresent(Int.self, forKey: .id)
-        main = try Main(from: decoder)
+        main = try values.decodeIfPresent(Main.self, forKey: .main)
         name = try values.decodeIfPresent(String.self, forKey: .name)
-        rain = try Rain(from: decoder)
-        sys = try Sy(from: decoder)
+        rain = try values.decodeIfPresent(Rain.self, forKey: .rain)
+        sys = try values.decodeIfPresent(Sy.self, forKey: .sys)
         timezone = try values.decodeIfPresent(Int.self, forKey: .timezone)
         visibility = try values.decodeIfPresent(Int.self, forKey: .visibility)
         weather = try values.decodeIfPresent([Weather].self, forKey: .weather)
-        wind = try Wind(from: decoder)
+        wind = try values.decodeIfPresent(Wind.self, forKey: .wind)
     }
 }

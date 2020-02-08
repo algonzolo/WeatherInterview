@@ -39,6 +39,7 @@
 		AB5FD26D241FB5D1009EC199 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5FD26C241FB5D1009EC199 /* DataStore.swift */; };
 		AB5FD26F241FB611009EC199 /* PersistenceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5FD26E241FB611009EC199 /* PersistenceProvider.swift */; };
 		AB5FD272241FB977009EC199 /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5FD271241FB977009EC199 /* Feed.swift */; };
+		AB5FD277241FCD40009EC199 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5FD276241FCD40009EC199 /* String+Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +79,7 @@
 		AB5FD26C241FB5D1009EC199 /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
 		AB5FD26E241FB611009EC199 /* PersistenceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceProvider.swift; sourceTree = "<group>"; };
 		AB5FD271241FB977009EC199 /* Feed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feed.swift; sourceTree = "<group>"; };
+		AB5FD276241FCD40009EC199 /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				AB5FD232241D379C009EC199 /* WeatherInterview.xcdatamodeld */,
+				AB5FD276241FCD40009EC199 /* String+Ext.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -428,6 +431,7 @@
 				AB5FD263241FA6EE009EC199 /* Coord.swift in Sources */,
 				AB5FD256241D3F00009EC199 /* GPSCoordinates.swift in Sources */,
 				AB5FD26A241FB4F0009EC199 /* AddLocationViewController.swift in Sources */,
+				AB5FD277241FCD40009EC199 /* String+Ext.swift in Sources */,
 				AB5FD264241FA6EE009EC199 /* Main.swift in Sources */,
 				AB5FD234241D379C009EC199 /* WeatherInterview.xcdatamodeld in Sources */,
 				AB5FD26F241FB611009EC199 /* PersistenceProvider.swift in Sources */,
